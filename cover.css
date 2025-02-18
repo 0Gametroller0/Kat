@@ -22,7 +22,7 @@ body {
 }
 
 .cover-container {
-  max-width: 42em;
+  max-width: 80em;
 }
 
 
@@ -50,4 +50,25 @@ body {
 .nav-masthead .active {
   color: #fff;
   border-bottom-color: #fff;
+}
+
+.dropdown:hover .dropdown-menu{
+  display: block;
+}
+
+header>div>a>h3{
+  font-family: 'Handlee', cursive;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+header>div>nav>a{
+  font-family: 'Handlee', cursive;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  margin-top: 3px;
+}
+
+header>div>nav>div>ul>li>a{
+  font-family: 'Handlee', cursive;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  font-weight: bold !important;
 }

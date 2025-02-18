@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.84.0">
+  <link rel="icon" href="https://www.flaticon.com/free-icons/red" title="red icons" type="image/icon type">
+  <title>Happy Valentines</title>
+  <link rel="icon" href="./heart.svg">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">
+  <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    :root {
+      --color-env: #FFB7C5;
+      --color-env2: #ff9aad;
+      --color-flap: #ff8da1;
+      --color-bg: #fff5f7;
+      --color-heart: #ff85a2;
+      --color-sparkle: #fff;
+      --wax-red: #c04040;
+    }
+
+    .modal {
+      margin-top: 150px;
+    }
+
+    .message,
+    .message>p>a {
+      position: relative;
+      font-family: 'Handlee', cursive;
+      text-align: center;
+      line-height: 1;
+      padding: 0px;
+      color: #d46a84;
+      text-decoration: none;
+    }
+
+    .message p {
+      font-size: 1em;
+      text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+      color: #d46a84;
+      margin: 20px 0px !important;
+      padding: 0px 15px;
+    }
+
+    h4,
+    h1 {
+      font-family: 'Handlee', cursive;
+      color: #d46a84;
+      text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .envlope-wrapper>div {
+      position: relative;
+      width: 56px;
+      height: 36px;
+      border-bottom-left-radius: 6px;
+      border-bottom-right-radius: 6px;
+      margin: 0 auto;
+      top: 15px;
+      background-color: var(--color-flap);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, .1);
+      cursor: pointer;
+    }
+
+    .front {
+      position: absolute;
+      width: 0;
+      height: 0;
+      z-index: 3;
+    }
+
+    .flap {
+      border-left: 28px solid transparent;
+      border-right: 28px solid transparent;
+      border-bottom: 16.4px solid transparent;
+      border-top: 19.6px solid var(--color-flap);
+      transform-origin: top;
+      pointer-events: none;
+    }
+
+    .pocket {
+      border-left: 28px solid var(--color-env);
+      border-right: 28px solid var(--color-env);
+      border-bottom: 18px solid var(--color-env2);
+      border-top: 18px solid transparent;
+      border-bottom-left-radius: 6px;
+      border-bottom-right-radius: 6px;
+    }
+
+    .envlope-wrapper {
+      height: 80px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .open .flap {
+      transform: rotateX(180deg);
+      transition: transform 0.4s ease, z-index 0.6s;
+      z-index: 1;
+    }
+
+    .close .flap {
+      transform: rotateX(0deg);
+      transition: transform 0.4s 0.6s ease, z-index 1s;
+      z-index: 5;
+    }
+  </style>
+
+
+  <!-- Custom styles for this template -->
+  <link href="cover.css" rel="stylesheet">
+</head>
+
+<body class="d-flex h-100 text-center text-white bg-dark">
+  <audio id="myAudio" autoplay loop>
+    <source src="./Blue-Yung Kai.mp3" type="audio/mp3">
+  </audio>
+
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="mb-auto">
+      <div>
+        <a class="nav-link active" aria-current="page" href="./index.html">
+          <h3 class="float-md-start mb-0">Home</h3>
+        </a>
+        <nav class="nav nav-masthead justify-content-center float-md-end">
+          <div class="dropdown" style="padding-right: 15px;">
+            <button type="button" class="nav-link" data-bs-toggle="dropdown">
+              <img src="./favicon.ico" alt="" style="height: 24px; margin-bottom: 10px;">
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="./gift1.html">Gift 1</a></li>
+              <li><a class="dropdown-item" href="./gift2.html">Gift 2</a></li>
+              <li><a class="dropdown-item" href="./gift3.html">Gift 3</a></li>
+            </ul>
+          </div>
+          <a class="nav-link" href="./important.html">Important</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="px-3">
+      <h1 style="margin-bottom: 2rem;">Click on any of them! ♥</h1>
+
+      <div class="container" style="max-width: 55em;">
+        <div class="row justify-content-around">
+          <div class="col">
+            <div class="envlope-wrapper">
+              <div id="envelope1" class="close" data-bs-toggle="modal" data-bs-target="#myModal1">
+                <div class="wax-seal"></div>
+                <div class="front flap"></div>
+                <div class="front pocket"></div>
+              </div>
+            </div>
+          </div>
+          <!-- The Modal -->
+          <div class="modal" id="myModal1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">You're really beautiful ♥</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body message">
+                  <p>
+                    You're really beautiful. Be it in cosplay or not. I know no matter what
+                    I say it probably won't change your own opinion of yourself. In all seriousness however you take
+                    this compliment, you will always be beautiful to me. ♥
+                  </p>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="envlope-wrapper">
+              <div id="envelope2" class="close" data-bs-toggle="modal" data-bs-target="#myModal2">
+                <div class="wax-seal"></div>
+                <div class="front flap"></div>
+                <div class="front pocket"></div>
+              </div>
+            </div>
+          </div>
+          <!-- The Modal -->
+          <div class="modal" id="myModal2">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">Your body &gt;//////&lt; </h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body message">
+                  <p>
+                    Not gonna lie... you look amazing. No matter how you dress up, you always look amazing... amazingly
+                    hot. You might not feel the same, but you have all the right curves in the right places. Will always
+                    remember and cherish that one demon slayer picture you sent me. Holy this shit sounds hella shallow
+                    of me but whatever HAHAHA.
+                  </p>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="envlope-wrapper">
+              <div id="envelope3" class="close" data-bs-toggle="modal" data-bs-target="#myModal3">
+                <div class="wax-seal"></div>
+                <div class="front flap"></div>
+                <div class="front pocket"></div>
+              </div>
+            </div>
+          </div>
+          <!-- The Modal -->
+          <div class="modal" id="myModal3">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">Your cute</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body message">
+                  <p>
+                    Your sleepiness, shyness, awkwardness brings out the adorable part of you. Making people wanna
+                    protect you and pat your head.
+                  </p>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="envlope-wrapper">
+              <div id="envelope4" class="close" data-bs-toggle="modal" data-bs-target="#myModal4">
+                <div class="wax-seal"></div>
+                <div class="front flap"></div>
+                <div class="front pocket"></div>
+              </div>
+            </div>
+          </div>
+          <!-- The Modal -->
+          <div class="modal" id="myModal4">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">Your eyes</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body message">
+                  <p>
+                    Honestly can't say much about your eyes cause everytime I look into them I get shy. It's too
+                    mesmerising, making me fall harder and harder.
+                  </p>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="envlope-wrapper">
+              <div id="envelope5" class="close" data-bs-toggle="modal" data-bs-target="#myModal5">
+                <div class="wax-seal"></div>
+                <div class="front flap"></div>
+                <div class="front pocket"></div>
+              </div>
+            </div>
+          </div>
+          <!-- The Modal -->
+          <div class="modal" id="myModal5">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">Your style/fashion</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body message">
+                  <p>
+                    Your always able to put together an outfit so effortlessly, maybe thats why everything you wear
+                    looks fantanstic. Even I don't understand how you do it, always looking so flawless.
+                  </p>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-around">
+          <div class="col">
+            <div class="envlope-wrapper">
+              <div id="envelope6" class="close" data-bs-toggle="modal" data-bs-target="#myModal6">
+                <div class="wax-seal"></div>
+                <div class="front flap"></div>
+                <div class="front pocket"></div>
+              </div>
+            </div>
+          </div>
+          <!-- The Modal -->
+          <div class="modal" id="myModal6">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">Your Awkwardness</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body message">
+                  <p>
+                    Honestly, I'm sure you've already heard me say it before, but its really cute watching you hide
+                    behind and being all shy. Bringing out the cute little innocence in you. Making you look vunerable
+                    and others wanting to protect you.
+                  </p>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="envlope-wrapper">
+              <div id="envelope7" class="close" data-bs-toggle="modal" data-bs-target="#myModal7">
+                <div class="wax-seal"></div>
+                <div class="front flap"></div>
+                <div class="front pocket"></div>
+              </div>
+            </div>
+          </div>
+          <!-- The Modal -->
+          <div class="modal" id="myModal7">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">Your teasing/banter</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body message">
+                  <p>
+                    It was alway enjoyable talking to you be it your teasing or just some random banters we have now and
+                    then. I miss having such interactions with you. Back when we were playing game together and your in
+                    the call too.
+                  </p>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="envlope-wrapper">
+              <div id="envelope8" class="close" data-bs-toggle="modal" data-bs-target="#myModal8">
+                <div class="wax-seal"></div>
+                <div class="front flap"></div>
+                <div class="front pocket"></div>
+              </div>
+            </div>
+          </div>
+          <!-- The Modal -->
+          <div class="modal" id="myModal8">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">Your caring</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body message">
+                  <p>
+                    Your always cheering me up. Whenever I feel like I'm doing poorly or being ass you always tell me
+                    that I'm doing fine. I really do appreciate all this small little gestures.
+                  </p>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="envlope-wrapper">
+              <div id="envelope9" class="close" data-bs-toggle="modal" data-bs-target="#myModal9">
+                <div class="wax-seal"></div>
+                <div class="front flap"></div>
+                <div class="front pocket"></div>
+              </div>
+            </div>
+          </div>
+          <!-- The Modal -->
+          <div class="modal" id="myModal9">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">Your talented</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body message">
+                  <p>
+                    Seems like no matter what game you play, you are constantly able to pop off and do well. Always
+                    doing well, either having good kda or high ranked. I don't know how you manage to do it but yea your
+                    pretty awesome.
+                  </p>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="envlope-wrapper">
+              <div id="envelope10" class="close" data-bs-toggle="modal" data-bs-target="#myModal10">
+                <div class="wax-seal"></div>
+                <div class="front flap"></div>
+                <div class="front pocket"></div>
+              </div>
+            </div>
+          </div>
+          <!-- The Modal -->
+          <div class="modal" id="myModal10">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">Your company</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body message">
+                  <p>
+                    Every second I get to spend with you has always been fun and enjoyable. Really do miss hanging out
+                    with you, back when we played together with the others almost daily. When you joined the voice chat
+                    and spoke too. It really was fun.
+                  </p>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="message">
+          <p>But in all seriousness... <a href="https://vt.tiktok.com/ZSM2eDH7y/"> click here</a> it explains it better
+            than what I worded above.</p>
+        </div>
+      </div>
+
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script>
+        $(document).ready(function () {
+
+          const envelope1 = $('#envelope1');
+          function open1() {
+            envelope1.removeClass("close").addClass("open");
+          }
+          envelope1.on('click', open1);
+
+          const envelope2 = $('#envelope2');
+          function open2() {
+            envelope2.removeClass("close").addClass("open");
+          }
+          envelope2.on('click', open2);
+
+          const envelope3 = $('#envelope3');
+          function open3() {
+            envelope3.removeClass("close").addClass("open");
+          }
+          envelope3.on('click', open3);
+
+          const envelope4 = $('#envelope4');
+          function open4() {
+            envelope4.removeClass("close").addClass("open");
+          }
+          envelope4.on('click', open4);
+
+          const envelope5 = $('#envelope5');
+          function open5() {
+            envelope5.removeClass("close").addClass("open");
+          }
+          envelope5.on('click', open5);
+
+          const envelope6 = $('#envelope6');
+          function open6() {
+            envelope6.removeClass("close").addClass("open");
+          }
+          envelope6.on('click', open6);
+
+          const envelope7 = $('#envelope7');
+          function open7() {
+            envelope7.removeClass("close").addClass("open");
+          }
+          envelope7.on('click', open7);
+
+          const envelope8 = $('#envelope8');
+          function open8() {
+            envelope8.removeClass("close").addClass("open");
+          }
+          envelope8.on('click', open8);
+
+          const envelope9 = $('#envelope9');
+          function open9() {
+            envelope9.removeClass("close").addClass("open");
+          }
+          envelope9.on('click', open9);
+
+          const envelope10 = $('#envelope10');
+          function open10() {
+            envelope10.removeClass("close").addClass("open");
+          }
+          envelope10.on('click', open10);
+
+        });
+      </script>
+
+      <script>
+        // Optionally, you can unmute the audio after the page loads if you want sound
+        window.addEventListener('load', function () {
+          var audio = document.getElementById('myAudio');
+          audio.muted = false; // Unmute the audio
+        });
+      </script>
+
+    </main>
+
+    <footer class="mt-auto text-white-50">
+      <p>
+        © Done by GameTroller 2025
+      </p>
+    </footer>
+  </div>
+
+
+
+</body>
+
+</html>
